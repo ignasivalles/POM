@@ -87,6 +87,7 @@ img {
 /* Footer styling with background image */
 footer {
     width: 100%;
+    overflow: hidden;
     position: relative;
     background-image: url('lider-fartos.jpg');  /* Your background image */
     background-size: cover;
@@ -97,6 +98,14 @@ footer {
     align-items: center;
     text-align: center;
     z-index: 1;  /* Ensure footer is above the map */
+}
+
+footer img {
+    width: 100%; /* Makes the image full width */
+    max-height: 80px; /* Limits the height */
+    height: auto; /* Keeps the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    object-position: bottom;
 }
 
 /* Menu inside footer */
