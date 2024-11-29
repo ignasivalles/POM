@@ -100,6 +100,7 @@ footer nav {
     position: absolute; /* Position the menu absolutely inside the footer */
     bottom: 30px;
     left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2; /* Makes sure the menu is above the image */
     text-align: center; /* Centers the navigation menu */
     padding: 10px 0; /* Adds padding around the menu */
