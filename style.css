@@ -57,6 +57,13 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Map Styling */
+#map {
+    width: 100%;
+    height: calc(100vh - 250px); /* Adjusts height to account for header and footer */
+    margin-bottom: 10px;
+}
+
 /* Footer Styling */
 footer {
     width: 100%;
