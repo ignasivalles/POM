@@ -29,14 +29,11 @@
         
     <script>
         // Initialize the map
-        var map = L.map('map').setView([43.75, -5.23], 5); // Center map on a specific location
+        var map = L.map('map').setView([43.75, -5.23], 5); // Center map on a specific location        
         
-        // Add OpenTopoMap base layer
-        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data: &copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap',
-            maxZoom: 17
-        }).addTo(map);
-        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);    
     </script>
 </body>
 </html>
