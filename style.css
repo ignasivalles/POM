@@ -97,11 +97,18 @@ footer img {
     object-position: bottom;
 }
 
-/* Navigation inside footer */
+/* Menu in footer */
+footer nav {
+    position: absolute;
+    top: 50%;  /* Centers the nav vertically in the footer */
+    left: 50%; /* Centers the nav horizontally */
+    transform: translate(-50%, -50%); /* Center it exactly */
+}
+
 footer nav ul {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px; /* Space out the items */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -115,7 +122,7 @@ footer nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px; /* Larger font size */
 }
 
 footer nav ul li a:hover {
