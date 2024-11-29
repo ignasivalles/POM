@@ -97,6 +97,29 @@ footer img {
     object-position: bottom;
 }
 
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0; /* Adds margin on top */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px; /* Spacing between the menu items */
+}
+
+nav ul li a {
+    color: white; /* Menu text color */
+    text-decoration: none; /* Removes underline */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
 .logos {
     display: flex;
     justify-content: center;
