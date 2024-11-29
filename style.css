@@ -84,43 +84,34 @@ img {
 }
 
 
-/* Footer styling */
+/* Footer styling with background image */
 footer {
     width: 100%;
-    overflow: hidden;
     position: relative;
-    background-image: url('lider-fartos.jpg');
+    background-image: url('lider-fartos.jpg');  /* Your background image */
     background-size: cover;
     background-position: center;
-    height: 200px; /* Set a fixed height for the footer */
-    margin-top: 5px; /* Add space above footer */
+    height: 250px; /* Adjust the height to fit your design */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    color: white;
-    padding: 0;
-    z-index: 10; /* Ensure footer is above other content */
+    z-index: 1;  /* Ensure footer is above the map */
 }
 
-footer img {
-    width: 100%; /* Makes the image full width */
-    max-height: 80px; /* Limits the height */
-    height: auto; /* Keeps the aspect ratio */
-    object-fit: cover; /* Ensures the image covers the entire area without distortion */
-    object-position: bottom;
-}
-
-/* Menu in footer */
+/* Menu inside footer */
 footer nav {
     position: absolute;
-    top: 50%;  /* Centers the nav vertically in the footer */
-    left: 50%; /* Centers the nav horizontally */
-    transform: translate(-50%, -50%); /* Center it exactly */
-    z-index: 2; /* Ensure nav is on top of the footer background */
+    top: 50%;  /* Vertically center the nav */
+    left: 50%;  /* Horizontally center the nav */
+    transform: translate(-50%, -50%);  /* True centering */
+    z-index: 2;  /* Ensure nav is above the background image */
 }
 
 footer nav ul {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Space out the items */
+    gap: 40px;  /* Space out the items */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -134,8 +125,7 @@ footer nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 22px;
-    font-family: 'Arial', sans-serif;/* Larger font size */
+    font-size: 22px;  /* Larger font size */
 }
 
 footer nav ul li a:hover {
