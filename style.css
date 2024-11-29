@@ -98,7 +98,7 @@ footer img {
 }
 footer nav {
     position: absolute; /* Position the menu absolutely inside the footer */
-    bottom: 30px;
+    bottom: 25px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Makes sure the menu is above the image */
@@ -120,7 +120,7 @@ nav ul li {
 nav ul li a {
     color: white; /* Menu text color */
     text-decoration: none; /* Removes underline */
-    font-size: 30px;
+    font-size: 18px;
     font-family: 'Arial', sans-serif; /* Change font type */
     font-weight: bold;
 }
