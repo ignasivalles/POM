@@ -114,7 +114,7 @@ footer nav {
     top: 50%;  /* Centers the nav vertically in the footer */
     left: 50%; /* Centers the nav horizontally */
     transform: translate(-50%, -50%); /* Center it exactly */
-    z-index: 20; /* Ensure nav is on top of the footer background */
+    z-index: 2; /* Ensure nav is on top of the footer background */
 }
 
 footer nav ul {
