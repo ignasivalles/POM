@@ -96,8 +96,16 @@ footer img {
     object-fit: cover; /* Ensures the image covers the entire area without distortion */
     object-position: bottom;
 }
-
-
+footer nav {
+    position: absolute; /* Position the menu absolutely inside the footer */
+    top: 0; /* Start from the top of the footer */
+    left: 0;
+    right: 0;
+    z-index: 2; /* Makes sure the menu is above the image */
+    text-align: center; /* Centers the navigation menu */
+    padding: 20px 0; /* Adds padding around the menu */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+}
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -137,13 +145,4 @@ nav ul li a:hover {
     height: auto;
     width: auto;
 }
-footer nav {
-    position: absolute; /* Position the menu absolutely inside the footer */
-    top: 0; /* Start from the top of the footer */
-    left: 0;
-    right: 0;
-    z-index: 2; /* Makes sure the menu is above the image */
-    text-align: center; /* Centers the navigation menu */
-    padding: 20px 0; /* Adds padding around the menu */
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
-}
+
