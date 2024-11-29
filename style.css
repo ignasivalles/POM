@@ -98,7 +98,7 @@ footer img {
 }
 footer nav {
     position: absolute; /* Position the menu absolutely inside the footer */
-    top: 0; /* Start from the top of the footer */
+    top: 50%; /* Start from the top of the footer */
     left: 0;
     right: 0;
     z-index: 2; /* Makes sure the menu is above the image */
