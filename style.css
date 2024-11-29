@@ -21,7 +21,7 @@ header img {
     font-family: 'Arial', sans-serif; /* Change font type */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add a shadow for better visibility */
     text-align: center; /* Center text */
-    text-transform: uppercase; /* Make text appear in capital letters */
+    text-transform: none; /* Make text appear in capital letters */
     font-weight: bold; /* Make text bold */
 }
 
@@ -98,7 +98,7 @@ footer img {
 }
 footer nav {
     position: absolute; /* Position the menu absolutely inside the footer */
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     z-index: 2; /* Makes sure the menu is above the image */
     text-align: center; /* Centers the navigation menu */
@@ -119,7 +119,8 @@ nav ul li {
 nav ul li a {
     color: white; /* Menu text color */
     text-decoration: none; /* Removes underline */
-    font-size: 16px;
+    font-size: 30px;
+    font-family: 'Arial', sans-serif; /* Change font type */
     font-weight: bold;
 }
 
