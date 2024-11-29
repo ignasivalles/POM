@@ -1,95 +1,111 @@
-/* General Header Styles */
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
 header {
+    position: relative;
     width: 100%;
-    margin-bottom: 5px;
-    overflow: hidden;
 }
 
 header img {
-    width: 100%; /* Makes the image full width */
-    max-height: 120px; /* Limits the height to 120px */
-    height: auto; /* Keeps the aspect ratio */
-    object-fit: cover; 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     object-position: top;
+    max-height: 120px; /* Adjust the height of the header image */
 }
 
 .header-text {
-    position: absolute; /* Absolutely position the text */
-    top: 70px; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to truly center */
-    color: white; /* Text color */
-    font-size: 40px; /* Adjust font size as needed */
-    font-family: 'Arial', sans-serif; /* Change font type */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add a shadow for better visibility */
-    text-align: center; /* Center text */
-    text-transform: uppercase; /* Make text appear in capital letters */
-    font-weight: bold; /* Make text bold */
-}
-
-/* Map Container */
-#map {
-    width: 100%;
-    height: calc(100vh - 250px);
-    margin-bottom: 10px;
-}
-
-/* Footer Styling with Background Image */
-footer {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    background-image: url('lider-fartos.jpg');  /* Your background image */
-    background-size: cover;
-    background-position: center;
-    height: 250px; /* Adjust the height to fit your design */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1;  /* Ensure footer is above the map */
-}
-
-/* Footer Image */
-footer img {
-    width: 100%; /* Makes the image full width */
-    max-height: 80px; /* Limits the height */
-    height: auto; /* Keeps the aspect ratio */
-    object-fit: cover; /* Ensures the image covers the entire area without distortion */
-    object-position: bottom;
-}
-
-/* Navigation inside Footer */
-footer nav {
     position: absolute;
-    top: 50%;  /* Vertically center the nav */
-    left: 50%;  /* Horizontally center the nav */
-    transform: translate(-50%, -50%);  /* True centering */
-    z-index: 2;  /* Ensure nav is above the background image */
-}
-
-/* Navigation Menu */
-footer nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 40px;  /* Space out the items */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-footer nav ul li {
-    display: inline-block;
-}
-
-footer nav ul li a {
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    text-decoration: none;
+    font-size: 40px;
     font-weight: bold;
-    font-size: 22px;  /* Larger font size */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 
-footer nav ul li a:hover {
+/* Navigation Menu inside Header */
+header nav ul {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Footer Styling */
+footer {
+    width: 100%;
+    background-image: url('lider-fartos.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    position: relative;
+    color: white;
+}
+
+/* Footer Content Wrapper */
+footer .footer-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;  /* Ensure content is above the footer image */
+}
+
+/* Horizontal Navigation Menu inside Footer */
+footer .footer-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin-bottom: 20px; /* Space between menu and logos */
+}
+
+footer .footer-nav ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer .footer-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Logos Section in Footer */
+footer .logos {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+footer .logos img {
+    max-height: 40px;
+    height: auto;
+    width: auto;
+}
