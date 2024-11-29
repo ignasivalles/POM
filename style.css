@@ -109,7 +109,7 @@ footer img {
 }
 
 /* Menu inside footer */
-footer nav {
+.nav {
     position: absolute;
     top: 50%;  /* Vertically center the nav */
     left: 50%;  /* Horizontally center the nav */
@@ -117,7 +117,7 @@ footer nav {
     z-index: 2;  /* Ensure nav is above the background image */
 }
 
-footer nav ul {
+.ul {
     display: flex;
     justify-content: center;
     gap: 40px;  /* Space out the items */
@@ -126,11 +126,11 @@ footer nav ul {
     margin: 0;
 }
 
-footer nav ul li {
+.li {
     display: inline-block;
 }
 
-footer nav ul li a {
+.a {
     color: white;
     text-decoration: none;
     font-weight: bold;
