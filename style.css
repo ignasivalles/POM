@@ -83,10 +83,21 @@ img {
     height: auto;
 }
 
+
+/* Footer styling */
 footer {
     width: 100%;
     overflow: hidden;
+    position: relative;
+    background-image: url('lider-fartos.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Set a fixed height for the footer */
     margin-top: 5px; /* Add space above footer */
+    text-align: center;
+    color: white;
+    padding: 0;
+    z-index: 10; /* Ensure footer is above other content */
 }
 
 footer img {
@@ -103,6 +114,7 @@ footer nav {
     top: 50%;  /* Centers the nav vertically in the footer */
     left: 50%; /* Centers the nav horizontally */
     transform: translate(-50%, -50%); /* Center it exactly */
+    z-index: 20; /* Ensure nav is on top of the footer background */
 }
 
 footer nav ul {
@@ -128,7 +140,6 @@ footer nav ul li a {
 footer nav ul li a:hover {
     text-decoration: underline;
 }
-
 .logos {
     display: flex;
     justify-content: center;
