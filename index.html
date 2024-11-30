@@ -34,7 +34,27 @@
         
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);    
+        }).addTo(map);
+        
+       // Coordinates
+        var lat_sardi = 43.4756, lon_sardi = -3.7847;
+        var lat_magda = 43.4704, lon_magda = -3.7653;
+
+        // Create markers and popups
+        var popupContentSardi = '<div style="width: 300px; height: 200px;">' +
+                                '<iframe src="sardi_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                                '</div>';
+        var popupContentMagda = '<div style="width: 300px; height: 200px;">' +
+                                '<iframe src="magda_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                                '</div>';
+
+        L.marker([lat_sardi, lon_sardi])
+            .addTo(map)
+            .bindPopup(popupContentSardi);
+
+        L.marker([lat_magda, lon_magda])
+            .addTo(map)
+            .bindPopup(popupContentMagda);
     </script>
 </body>
 </html>
