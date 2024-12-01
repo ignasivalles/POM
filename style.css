@@ -32,7 +32,7 @@ header img {
 }
 
 .leaflet-popup-content {
-    width: 800px !important; /* Set your desired width */
+    width: 400px !important; /* Set your desired width */
     max-width: 100%; /* Ensure it doesn't exceed the viewport */
     box-sizing: border-box; /* Include padding in width calculation */
     padding: 0; 
