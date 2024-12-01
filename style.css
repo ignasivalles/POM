@@ -36,7 +36,7 @@ header img {
     max-height: 400px; /* Limit height to avoid oversized popups */
     width: auto; 
     height: auto;
-    overflow-y: auto; /* Add scrolling for tall content */
+    box-sizing: border-box; /* Add scrolling for tall content */
 }
 
 .popup-frame {
