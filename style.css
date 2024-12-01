@@ -50,6 +50,7 @@ header img {
     flex-direction: column; /* Stack h3 and info vertically */
     padding: 10px; /* Add some padding */
     border: 1px solid #ccc; /* Optional: Add a border */
+    justify-content: flex-start;
     border-radius: 5px; /* Optional: Round the corners */
     background-color: #fff; /* Optional: Background color */
 }
