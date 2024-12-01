@@ -32,7 +32,7 @@ header img {
 }
 
 .leaflet-popup-content {
-    max-width: 90%; /* Allow the popup to scale with the viewport */
+    max-width: 100%; /* Allow the popup to scale with the viewport */
     max-height: 400px; /* Limit height to avoid oversized popups */
     overflow-y: auto; /* Add scrolling for tall content */
 }
@@ -53,7 +53,7 @@ header img {
 }
 
 .popup-info {
-    max-height: 300px; /* Adjust based on content */
+    max-height: 400px; /* Adjust based on content */
     overflow-y: auto; /* Enable scrolling if necessary */
 }
 
