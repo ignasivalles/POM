@@ -49,7 +49,7 @@ header img {
 }
 
 .popup-frame {
-    width: 100%;            /* Ensure iframe takes full width of the container */
+    width: 60%;            /* Ensure iframe takes full width of the container */
     height: 100%;           /* Ensure iframe takes full height of the container */
     border: none;           /* Remove border around iframe */
     margin: 0;              /* Ensure no margin around the iframe */
@@ -58,7 +58,7 @@ header img {
 }
 
 .popup-image {
-    max-width: 600px; /* Set a max width for the image */
+    max-width: 400px; /* Set a max width for the image */
     height: auto; /* Maintain aspect ratio */
 }
 
