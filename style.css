@@ -32,11 +32,14 @@ header img {
 }
 
 .leaflet-popup-content {
-    max-width: 100%; /* Allow the popup to scale with the viewport */
-    max-height: 400px; /* Limit height to avoid oversized popups */
-    width: 900px; 
-    height: auto;
-    box-sizing: border-box;
+    max-width: 100%;         /* Allow the popup to scale with the viewport */
+    max-height: 80vh;        /* Limit the height to 80% of the viewport height */
+    overflow-y: auto;        /* Enable scrolling if content overflows vertically */
+    box-sizing: border-box;  /* Ensure padding and borders are included in width calculation */
+    padding: 0;              /* Remove any padding */
+    display: flex;           /* Flexbox to handle the alignment of content */
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start;     /* Align content to the top */
 }
 
 .popup-frame {
