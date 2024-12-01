@@ -46,13 +46,6 @@ header img {
     background-color: #fff; /* Optional: Background color */
 }
 
-.popup-info-container {
-    display: flex; /* Use Flexbox for info and image */
-    justify-content: space-between; /* Space between info and image */
-    align-items: flex-start; /* Align items to the top */
-    margin-top: 10px; /* Space between title and container */
-}
-
 .popup-info {
     display: block; /* Default block display for single-column layout */
     margin-top: 10px; /* Space between items */
