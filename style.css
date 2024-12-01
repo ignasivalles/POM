@@ -38,8 +38,9 @@ header img {
 }
 
 .popup-frame {
-    width: 100%; /* Take full width of the container */
-    border: none; /* Remove borders from iframe */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    border: none; /* No border around the iframe */
 }
 
 .popup-content {
