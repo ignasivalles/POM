@@ -34,6 +34,8 @@ header img {
 .leaflet-popup-content {
     max-width: 100%; /* Allow the popup to scale with the viewport */
     max-height: 400px; /* Limit height to avoid oversized popups */
+    width: auto; 
+    height: auto;
     overflow-y: auto; /* Add scrolling for tall content */
 }
 
