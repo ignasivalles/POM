@@ -48,14 +48,6 @@ header img {
     background-color: #fff; /* Optional: Background color */
 }
 
-.popup-frame {
-    width: 60%;            /* Ensure iframe takes full width of the container */
-    height: 100%;           /* Ensure iframe takes full height of the container */
-    border: none;           /* Remove border around iframe */
-    margin: 0;              /* Ensure no margin around the iframe */
-    padding: 0;             /* Remove any padding inside the iframe */
-    display: block;         /* Ensure iframe is a block element and fills the space */
-}
 
 .popup-image {
     max-width: 400px; /* Set a max width for the image */
