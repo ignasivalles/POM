@@ -32,8 +32,8 @@ header img {
 }
 
 .leaflet-popup-content {
-    max-width: 80vw;        /* Set max-width to 80% of viewport width (or adjust as needed) */
-    max-height: 80vh;       /* Limit height to 80% of viewport height */
+    max-width: 1000px;        /* Set max-width to 80% of viewport width (or adjust as needed) */
+    max-height: 1000px;       /* Limit height to 80% of viewport height */
     overflow-y: auto;       /* Allow scrolling for taller content */
     padding: 0;             /* Remove any padding */
     box-sizing: border-box; /* Ensure padding/border doesn't interfere with sizing */
