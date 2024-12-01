@@ -37,6 +37,11 @@ header img {
     overflow-y: auto; /* Add scrolling for tall content */
 }
 
+.popup-frame {
+    width: 100%; /* Take full width of the container */
+    border: none; /* Remove borders from iframe */
+}
+
 .popup-content {
     display: flex;
     flex-direction: column; /* Stack h3 and info vertically */
