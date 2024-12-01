@@ -32,40 +32,23 @@ header img {
 }
 
 .leaflet-popup-content {
-    max-width: 1000px;        /* Set max-width to 80% of viewport width (or adjust as needed) */
-    max-height: 1000px;       /* Limit height to 80% of viewport height */
-    overflow-y: auto;       /* Allow scrolling for taller content */
-    padding: 0;             /* Remove any padding */
-    box-sizing: border-box; /* Ensure padding/border doesn't interfere with sizing */
+    width: 600px !important; /* Set your desired width */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
-/* Styling for the iframe itself */
-.popup-frame {
-    width: 100%;            /* Ensure the iframe takes full width of its container */
-    height: 100%;           /* Ensure the iframe takes full height of its container */
-    border: none;           /* No border around the iframe */
-}
-
-/* Optional: Optional adjustments for popup content */
 .popup-content {
     display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Include padding/borders in size calculation */
-    overflow: hidden;       /* Ensure nothing overflows the container */
-    width: 100%;
-}
-
-.popup-info {
-    max-height: 400px; /* Adjust based on content */
-    overflow-y: auto; /* Enable scrolling if necessary */
+    flex-direction: column; /* Stack h3 and info vertically */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Round the corners */
+    background-color: #fff; /* Optional: Background color */
 }
 
 .popup-image {
-    display: none;
+    max-width: 600px; /* Set a max width for the image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Optional: Add some margin to the h3 for spacing */
