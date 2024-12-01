@@ -54,13 +54,12 @@ header img {
 }
 
 .popup-info {
-    display: flex; /* Use Flexbox for the info section */
-    flex-direction: column; /* Stack info items vertically */
+    display: block; /* Default block display for single-column layout */
+    margin-top: 10px; /* Space between items */
 }
 
 .popup-image {
-    max-width: 200px; /* Set a max width for the image */
-    height: auto; /* Maintain aspect ratio */
+    display: none;
 }
 
 /* Optional: Add some margin to the h3 for spacing */
