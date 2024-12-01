@@ -43,16 +43,16 @@
     var lat_liencres = 43.455,   lon_liencres = -3.96;
 
     // Create markers and popups with adjusted iframe dimensions
-    var popupContentSardi = '<div style="width: 350px; height: 250px; overflow: hidden;">' +
+    var popupContentSardi = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
                             '<iframe src="sardinero_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
-    var popupContentMagda = '<div style="width: 350px; height: 250px; overflow: hidden;">' +
+    var popupContentMagda = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
                             '<iframe src="magdalena_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
-    var popupContentLiencres = '<div style="width: 350px; height: 250px; overflow: hidden;">' +
+    var popupContentLiencres = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
                             '<iframe src="liencres_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
-    var popupContentIEO = '<div style="width: 350px; height: 250px; overflow: hidden;">' +
+    var popupContentIEO = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
                             '<iframe src="liencres_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
 
@@ -66,14 +66,14 @@
 
     L.circleMarker([lat_liencres, lon_liencres], {
         radius: 6,           // Marker size
-        color: 'red',        // Border color
+        color: 'blue',        // Border color
         fillColor: '#f03',   // Fill color
         fillOpacity: 0.5     // Fill opacity
         }).addTo(map)
         .bindPopup(popupContentLiencres); // Attach the popup
     L.circleMarker([lat_IEO, lon_IEO], {
         radius: 6,           // Marker size
-        color: 'red',        // Border color
+        color: 'blue',        // Border color
         fillColor: '#f03',   // Fill color
         fillOpacity: 0.5     // Fill opacity
         }).addTo(map)
