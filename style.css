@@ -32,9 +32,9 @@ header img {
 }
 
 .leaflet-popup-content {
-    width: 600px !important; /* Set your desired width */
-    max-width: 100%; /* Ensure it doesn't exceed the viewport */
-    box-sizing: border-box; /* Include padding in width calculation */
+    max-width: 90%; /* Allow the popup to scale with the viewport */
+    max-height: 400px; /* Limit height to avoid oversized popups */
+    overflow-y: auto; /* Add scrolling for tall content */
 }
 
 .popup-content {
@@ -47,8 +47,8 @@ header img {
 }
 
 .popup-info {
-    display: block; /* Default block display for single-column layout */
-    margin-top: 10px; /* Space between items */
+    max-height: 300px; /* Adjust based on content */
+    overflow-y: auto; /* Enable scrolling if necessary */
 }
 
 .popup-image {
