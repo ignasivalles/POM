@@ -153,7 +153,7 @@ nav ul li a:hover {
     padding: 10px 0;
     position: absolute;
     bottom: 50px; /* Position logos at the bottom of the footer */
-    width: 200%; 
+    width: 100%; 
     z-index: 2; /* Ensure logos appear on top of the background image */
 }
 
