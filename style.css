@@ -152,7 +152,7 @@ nav ul li a:hover {
     gap: 50px;
     padding: 10px 0;
     position: absolute;
-    bottom: 25px; /* Position logos at the bottom of the footer */
+    bottom: 10px; /* Position logos at the bottom of the footer */
     left: 50%;
     transform: translateX(-50%);
     width: 100%; 
