@@ -29,7 +29,7 @@ header img {
 header .right-nav {
     position: absolute; /* Position the menu absolutely inside the header */
     top: 70px; /* Adjust as needed */
-    right: 100px;
+    right: 0px;
     transform: translate(0, -50%);
     font-family: 'Montserrat', sans-serif; /* Change font type */
     z-index: 2; /* Makes sure the menu is above the image */
@@ -41,7 +41,7 @@ header .right-nav {
 header .left-nav {
     position: absolute; /* Position the menu absolutely inside the header */
     top: 70px; /* Adjust as needed */
-    left: 100px; /* Position to the left */
+    left: 0px; /* Position to the left */
     transform: translate(0, -50%);
     font-family: 'Montserrat', sans-serif; /* Change font type */
     z-index: 2; /* Makes sure the menu is above the image */
