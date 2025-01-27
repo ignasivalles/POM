@@ -171,7 +171,7 @@ nav ul li a:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     top: 110px; /* Center vertically */
-    left: -615px; /* Align to the left */
+    left: -815px; /* Align to the left */
     transform: translate(0, -50%); /* Adjust position to center */
     margin-left: 400px;
     z-index: 2; /* Add some space from the left */
