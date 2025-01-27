@@ -26,10 +26,22 @@ header img {
     font-weight: bold; /* Make text bold */
 }
 
-header nav {
+header .right-nav {
     position: absolute; /* Position the menu absolutely inside the header */
     top: 70px; /* Adjust as needed */
     right: 100px;
+    transform: translate(0, -50%);
+    font-family: 'Montserrat', sans-serif; /* Change font type */
+    z-index: 2; /* Makes sure the menu is above the image */
+    text-align: center; /* Centers the navigation menu */
+    padding: 10px 0; /* Adds padding around the menu */
+    background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
+}
+
+header .left-nav {
+    position: absolute; /* Position the menu absolutely inside the header */
+    top: 70px; /* Adjust as needed */
+    left: 0; /* Position to the left */
     transform: translate(0, -50%);
     font-family: 'Montserrat', sans-serif; /* Change font type */
     z-index: 2; /* Makes sure the menu is above the image */
