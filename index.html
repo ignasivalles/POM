@@ -40,6 +40,12 @@
     </footer>
         
     <script>
+        var watericonblue = L.icon({
+        iconUrl: 'assets/water_icon3.png', // Replace with the path to your custom icon image
+        iconSize: [32, 32], // Adjust the size as needed
+        iconAnchor: [16, 32], // Anchor the icon (half the icon size)
+        popupAnchor: [0, -32] // Position the popup correctly
+    });
         // Initialize the map
         var map = L.map('map').setView([43.44, -3.74], 11); // Center map on a specific location        
         
@@ -67,11 +73,11 @@
                             '<iframe src="liencres_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
 
-    L.marker([lat_sardi, lon_sardi])
+    L.marker([lat_sardi, lon_sardi], {icon: watericonblue})
         .addTo(map)
         .bindPopup(popupContentSardi);
 
-    L.marker([lat_magda, lon_magda])
+    L.marker([lat_magda, lon_magda], {icon: watericonblue})
         .addTo(map)
         .bindPopup(popupContentMagda);
 
