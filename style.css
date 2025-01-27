@@ -167,14 +167,13 @@ nav ul li a:hover {
 .info.legend {
     background: rgba(255, 255, 255, 0.8); /* Half-transparent white background */
     padding: 8px 10px;
-    font: 12px/12px 'Montserrat', sans-serif; /* Use the same font as the title */
+    font: 14px/16px 'Montserrat', sans-serif; /* Use the same font as the title */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    top: 110px; /* Center vertically */
-    left: -815px; /* Align to the left */
-    transform: translate(0, -50%); /* Adjust position to center */
-    margin-left: 400px;
-    z-index: 2; /* Add some space from the left */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 10px; /* Align to the left with some margin */
+    transform: translateY(-50%); /* Adjust position to center vertically */
 }
 .info.legend img {
     vertical-align: middle;
