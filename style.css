@@ -168,11 +168,11 @@ nav ul li a:hover {
     header img, footer img {
         max-height: 60px;
     }
-    
+
     .header-text {
         font-size: 20px;
     }
-    
+
     .logos {
         flex-direction: column;
         align-items: center;
@@ -180,13 +180,33 @@ nav ul li a:hover {
         bottom: 20px;
         padding: 10px;
     }
-    
+
     .logo {
         max-height: 30px;
     }
-    
+
     #map {
         height: calc(100vh - 200px);
     }
+
+    .info {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .popup-content {
+        width: auto;
+        padding: 10px;
+    }
+
+    .popup-image {
+        max-width: 100%;
+    }
+
+    .leaflet-popup-content {
+        width: auto !important;
+        max-width: 100%;
+    }
 }
+
 
