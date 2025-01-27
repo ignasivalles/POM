@@ -30,7 +30,7 @@ header nav {
     position: absolute; /* Position the menu absolutely inside the header */
     top: 70px; /* Adjust as needed */
     left: 75%;
-    right: 0;
+    right: 10;
     transform: translate(-50%, -50%);
     z-index: 2; /* Makes sure the menu is above the image */
     text-align: center; /* Centers the navigation menu */
