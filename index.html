@@ -97,16 +97,17 @@
         .bindPopup(popupContentLiencres); // Attach the popup
 
         // Add legend
-    var legend = L.control({position: 'topright'});
+        var legend = L.control({position: 'topright'});
 
-    legend.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'info legend');
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend');
 
-        div.innerHTML += '<img src="assets/water_icon3.png" alt="Water Icon" style="width: 20px; height: 20px;"> Magdalena and Sardinero<br>';
-        div.innerHTML += '<i style="background: blue; border-radius: 50%; width: 12px; height: 12px; display: inline-block;"></i> Liencres and IEO<br>';
+            div.innerHTML += '<img src="assets/water_icon3.png" alt="Water Icon" style="width: 20px; height: 20px;"> Magdalena and Sardinero<br>';
+            div.innerHTML += '<i style="background: blue; border-radius: 50%; width: 12px; height: 12px; display: inline-block;"></i> Liencres and IEO<br>';
 
         return div;
         };
+        legend.addTo(map);
     </script>
 </body>
 </html>
