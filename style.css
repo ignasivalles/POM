@@ -100,13 +100,13 @@ footer img {
     object-position: bottom;
 }
 footer nav {
-    position: absolute; /* Position the menu absolutely */
-    top: 0; /* Align with the top of the header */
-    right: 0; /* Align to the right */
-    transform: none; /* Remove the centering transform */
-    z-index: 2; /* Ensure the menu is above other elements */
-    text-align: right; /* Align text to the right */
-    padding: 10px; /* Add padding around the menu */
+    position: absolute; /* Position the menu absolutely inside the footer */
+    bottom: 22px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Makes sure the menu is above the image */
+    text-align: center; /* Centers the navigation menu */
+    padding: 10px 0; /* Adds padding around the menu */
     background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
 }
 nav ul {
