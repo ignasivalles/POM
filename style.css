@@ -2,6 +2,7 @@ header {
     width: 100%;
     margin-bottom: 5px;
     overflow: hidden;
+    position: relative;
 }
 header img {
     width: 100%; /* Makes the image full width */
@@ -23,6 +24,17 @@ header img {
     text-align: center; /* Center text */
     text-transform: none; /* Make text appear in capital letters */
     font-weight: bold; /* Make text bold */
+}
+
+header nav {
+    position: absolute; /* Position the menu absolutely inside the header */
+    top: 70px; /* Adjust as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Makes sure the menu is above the image */
+    text-align: center; /* Centers the navigation menu */
+    padding: 10px 0; /* Adds padding around the menu */
+    background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
 }
 
 .info img {
