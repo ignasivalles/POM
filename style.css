@@ -147,14 +147,13 @@ nav ul li a:hover {
 
 .logos {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 50px;
     padding: 10px 0;
     position: absolute;
-    bottom: 10px; /* Position logos at the bottom of the footer */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 30px; /* Position logos at the bottom of the footer */
+    right: 10px;
     width: 100%; 
     z-index: 2; /* Ensure logos appear on top of the background image */
 }
