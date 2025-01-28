@@ -165,24 +165,24 @@ nav ul li a:hover {
 
 /* Add this to your style.css file */
 .info.legend {
-    background: rgba(255, 255, 255, 0.8); /* Half-transparent white background */
-    padding: 8px 10px;
-    font: 14px/16px 'Montserrat', sans-serif; /* Use the same font as the title */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 10px; /* Align to the left with some margin */
-    transform: translateY(-50%); /* Adjust position to center vertically */
+    background: rgb(16 163 229 / 16%); /* Half-transparent white background */
+    padding: 5px 15px;
+    font: 12px/12px 'Montserrat', sans-serif; /* Use the same font as the title */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    #position: absolute;
+    top: 5000%; /* Center vertically */
+    right: 265%; /* Align to the left with some margin */
+    transform: translateY(150%); /* Adjust position to center vertically */
 }
 .info.legend img {
-    vertical-align: middle;
+   # vertical-align: middle;
 }
 .info.legend i {
     display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 8px;
+    width: 200px;
+    height: 10px;
+    margin-right: 200px;
 }
 
 
