@@ -58,6 +58,7 @@ header .left-nav {
 
 .leaflet-popup-content {
     width: 425px !important; /* Set your desired width */
+    height: 260px;
     max-width: 50%; /* Ensure it doesn't exceed the viewport */
     box-sizing: border-box; /* Include padding in width calculation */
     padding: 0; 
