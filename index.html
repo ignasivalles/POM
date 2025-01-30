@@ -88,12 +88,9 @@
         fillOpacity: 0.5     // Fill opacity
         }).addTo(map)
         .bindPopup(popupContentLiencres); // Attach the popup
-    L.circleMarker([lat_IEO, lon_IEO], {
-        radius: 6,           // Marker size
-        color: 'blue',        // Border color
-        fillColor: '#f03',   // Fill color
-        fillOpacity: 0.5     // Fill opacity
-        }).addTo(map)
+        
+    L.marker([lat_IEO, lon_IEO], {icon: watericonblue})
+        .addTo(map)
         .bindPopup(popupContentLiencres); // Attach the popup
     </script>
 </body>
