@@ -67,7 +67,7 @@
                             '<iframe src="magdalena_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
     var popupContentIEO = '<div style="width: 420px; height: 250px; overflow: hidden;">' +
-                            '<iframe src="liencres_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                            '<iframe src="IEO_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
 
     var popupContentMiguel = '<div style="width: 420px; height: 250px; overflow: hidden;">' +
@@ -84,11 +84,11 @@
 
     L.marker([lat_Miguel, lon_Miguel], {icon: watericonblue})
         .addTo(map)
-        .bindPopup(popupContentMagda);
+        .bindPopup(popupContentMiguel);
         
     L.marker([lat_IEO, lon_IEO], {icon: watericonblue})
         .addTo(map)
-        .bindPopup(popupContentLiencres); // Attach the popup
+        .bindPopup(popupContentIEO); // Attach the popup
 
     L.circleMarker([lat_liencres, lon_liencres], {
         radius: 6,           // Marker size
@@ -97,6 +97,7 @@
         fillOpacity: 0.5     // Fill opacity
         }).addTo(map)
         .bindPopup(popupContentLiencres); // Attach the popup
+
     </script>
 </body>
 </html>
