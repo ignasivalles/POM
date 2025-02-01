@@ -186,6 +186,20 @@ nav ul li a:hover {
     margin-right: 200px;
 }
 
+.color-bar {
+    position: relative;
+    bottom: 520px;
+    left: 1200px;
+    width: 200px;
+    height: 20px;
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5));
+    border: 1px solid #000;
+    color: #FFF;
+    text-align: center;
+    line-height: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
 
 /* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
