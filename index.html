@@ -59,15 +59,43 @@
                         var temp = row.Temperature;
                         var date = row.Date;
 
-                        var popupContent = '<div style="width: 30px; font-family: Montserrat, sans-serif; font-weight: bold;">Sea Temperature: ' + temp + '°C<br>Date: ' + date + '</div>';
+                        // Function to interpolate color between blue and red based on temperature
+                        function getColor(temp) {
+                            var minTemp = 12;
+                            var maxTemp = 25;
+                            var blue = [0, 0, 255];
+                            var red = [255, 0, 0];
+
+                            var ratio = (temp - minTemp) / (maxTemp - minTemp);
+                            ratio = Math.max(0, Math.min(1, ratio)); // Clamp between 0 and 1
+
+                            var r = Math.round(blue[0] + ratio * (red[0] - blue[0]));
+                            var g = Math.round(blue[1] + ratio * (red[1] - blue[1]));
+                            var b = Math.round(blue[2] + ratio * (red[2] - blue[2]));
+
+                            return `rgb(${r},${g},${b})`;
+                        }
+
+                var fillColor = getColor(temp);
+
+                        var popupContent = '<div style="width: 200px; font-family: Montserrat, sans-serif; margin-left: 20px;">' +
+                                   '<strong>Sea Temperature:</strong> ' + temp + '°C<br>' +
+                                   '<strong>Date:</strong> ' + date +
+                                   '</div>';
+
+                        var popupOptions = {
+                            maxWidth: 200, // Set the maximum width of the popup box
+                            maxHeight: 80  // Set the maximum height of the popup box
+                        };
+
 
                         L.circleMarker([lat, lon], {
                             radius: 6,           // Marker size
-                            color: 'blue',        // Border color
-                            fillColor: '#f03',   // Fill color
+                            color: 'none',        // Border color
+                            fillColor: fillColor,   // Fill color
                             fillOpacity: 0.5     // Fill opacity
                         }).addTo(map)
-                          .bindPopup(popupContent);
+                          .bindPopup(popupContent, popupOptions);
                     });
                 }
             });
