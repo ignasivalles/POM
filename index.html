@@ -41,10 +41,10 @@
                 header: true,
                 complete: function(results) {
                     results.data.forEach(function(row) {
-                        var lat = parseFloat(row.lat);
-                        var lon = parseFloat(row.lon);
-                        var temp = row.temp;
-                        var date = row.date;
+                        var lat = parseFloat(row.Latitude);
+                        var lon = parseFloat(row.Longitude);
+                        var temp = row.Temperature;
+                        var date = row.Date;
 
                         var popupContent = 'Temperature: ' + temp + '°C<br>Date: ' + date;
 
@@ -61,7 +61,7 @@
         }
 
         // Fetch the CSV file and add markers
-        fetch('data.csv')
+        fetch('individual_data.csv')
             .then(response => response.text())
             .then(csvData => addMarkersFromCSV(csvData));
 
