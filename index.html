@@ -111,8 +111,9 @@
         var colorBarControl = L.control({position: 'bottomleft'});
 
         colorBarControl.onAdd = function(map) {
-            var div = L.DomUtil.create('div', 'color-bar');
-            div.innerHTML = '12°C to 25°C';
+            var div = L.DomUtil.create('div', 'color-bar-container');
+            div.innerHTML = '<div class="color-bar-title">Temperature Scale</div>' +
+                            '<div class="color-bar">12°C to 25°C</div>';
             return div;
         };
 

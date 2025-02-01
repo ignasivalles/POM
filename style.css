@@ -200,6 +200,21 @@ nav ul li a:hover {
     font-family: 'Montserrat', sans-serif;
 }
 
+.color-bar-container {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.color-bar-title {
+    position: relative;
+    bottom: 520px;
+    left: 1200px;
+    width: 200px;
+    height: 20px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
 
 /* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
