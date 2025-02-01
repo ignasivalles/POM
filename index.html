@@ -59,7 +59,7 @@
                         var temp = row.Temperature;
                         var date = row.Date;
 
-                        var popupContent = 'Temperature: ' + temp + '°C<br>Date: ' + date;
+                        var popupContent = '<div style="width: 150px; font-family: Montserrat, sans-serif; font-weight: bold;">Sea Temperature: ' + temp + '°C<br>Date: ' + date + '</div>';
 
                         L.circleMarker([lat, lon], {
                             radius: 6,           // Marker size
@@ -91,7 +91,7 @@
         var lat_IEO      = 43.46,   lon_IEO      = -3.78;
         var lat_Miguel   = 43.4508, lon_Miguel   = -3.8215;
 
-    // Create markers and popups with adjusted iframe dimensions
+        // Create markers and popups with adjusted iframe dimensions
         var popupContentSardi = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
                            '<iframe src="sardinero_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                            '</div>';
