@@ -14,17 +14,30 @@
     <header>
         <img src="lider-fartos.jpg" alt="Header Image" />
         <div class="header-text">Poniendo Ojos al Mar</div>
+        <nav class="right-nav">
+            <ul>
+                <li><a href="climatological-year/">Perspectiva climatológica</a></li>
+                <!-- Add more links here if needed -->
+            </ul>
+        </nav>
+        <nav class="left-nav">
+            <ul>
+                <li><a href="entidades/">Entidades participantes</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div id="map"></div>
    
+    <!-- Footer section -->
     <footer>
-        <img src="lider-fartos.jpg" alt="Footer Image" />
-        <nav>
-            <ul>
-                <li><a href="climatological-year/">Perspectiva climatológica</a></li>
-            </ul>
-        </nav>
+        <div>
+            <img src="lider-fartos.jpg" alt="Footer Image" />
+        </div>
+        <div class="logos">
+            <img src="assets/logoNexGen.png" alt="Logo NextGen" class="logo">
+            <img src="assets/logoIEO-CSIC.png" alt="Logo IEO-CSIC" class="logo">
+        </div>
     </footer>
 
     <script>
@@ -66,47 +79,48 @@
             .then(csvData => addMarkersFromCSV(csvData));
 
         // Existing markers and popups
-        var lat_sardi = 43.4756, lon_sardi = -3.7847;
-        var lat_magda = 43.4704, lon_magda = -3.7653;
-        var lat_IEO = 43.46, lon_IEO = -3.78;
-        var lat_liencres = 43.455, lon_liencres = -3.96;
 
+        var watericonblue = L.icon({
+            iconUrl: 'assets/water_icon3.png', // Replace with the path to your custom icon image
+            iconSize: [32, 32], // Adjust the size as needed
+            iconAnchor: [16, 32], // Anchor the icon (half the icon size)
+            popupAnchor: [0, -32] // Position the popup correctly
+        });
+        var lat_sardi    = 43.4756, lon_sardi    = -3.7847;
+        var lat_magda    = 43.4704, lon_magda    = -3.7653;
+        var lat_IEO      = 43.46,   lon_IEO      = -3.78;
+        var lat_Miguel   = 43.4508, lon_Miguel   = -3.8215;
+
+    // Create markers and popups with adjusted iframe dimensions
         var popupContentSardi = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
-                                '<iframe src="sardinero_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
-                                '</div>';
+                           '<iframe src="sardinero_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                           '</div>';
         var popupContentMagda = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
-                                '<iframe src="magdalena_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
-                                '</div>';
-        var popupContentLiencres = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
-                                   '<iframe src="liencres_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
-                                   '</div>';
-        var popupContentIEO = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
-                              '<iframe src="liencres_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
-                              '</div>';
+                            '<iframe src="magdalena_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                            '</div>';
+        var popupContentIEO = '<div style="width: 420px; height: 250px; overflow: hidden;">' +
+                            '<iframe src="IEO_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                            '</div>';
 
-        L.marker([lat_sardi, lon_sardi])
+        var popupContentMiguel = '<div style="width: 420px; height: 250px; overflow: hidden;">' +
+                            '<iframe src="Miguel_Bravo_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                            '</div>';
+    
+        L.marker([lat_sardi, lon_sardi], {icon: watericonblue})
             .addTo(map)
             .bindPopup(popupContentSardi);
 
-        L.marker([lat_magda, lon_magda])
+        L.marker([lat_magda, lon_magda], {icon: watericonblue})
             .addTo(map)
             .bindPopup(popupContentMagda);
 
-        L.circleMarker([lat_liencres, lon_liencres], {
-            radius: 6,           // Marker size
-            color: 'blue',        // Border color
-            fillColor: '#f03',   // Fill color
-            fillOpacity: 0.5     // Fill opacity
-        }).addTo(map)
-          .bindPopup(popupContentLiencres);
-
-        L.circleMarker([lat_IEO, lon_IEO], {
-            radius: 6,           // Marker size
-            color: 'blue',        // Border color
-            fillColor: '#f03',   // Fill color
-            fillOpacity: 0.5     // Fill opacity
-        }).addTo(map)
-          .bindPopup(popupContentLiencres);
+        L.marker([lat_Miguel, lon_Miguel], {icon: watericonblue})
+            .addTo(map)
+            .bindPopup(popupContentMiguel);
+        
+        L.marker([lat_IEO, lon_IEO], {icon: watericonblue})
+            .addTo(map)
+            .bindPopup(popupContentIEO); // Attach the popup
     </script>
 </body>
 </html>
