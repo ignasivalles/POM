@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import holoviews as hv
 from scipy.signal import savgol_filter
+from bokeh.models import HoverTool
+hv.extension('bokeh')
 
 def detect_water_temp(temp,time,window_size=6, only_water_val=True):
 
@@ -72,13 +74,13 @@ def detect_water_temp2(temp, time, window_size=6, only_water_val=True):
         air_time = time[state_filled == 'air']
         return water_data, water_time, moving_var, var_threshold
 
-def detect_water_temp_v2(temp, time, window_size=6, only_water_val=True):
+def detect_water_temp_v2(temp, time, window_size=4, only_water_val=True):
     # Calculate the rolling mean and rolling variance
     moving_avg = pd.Series(temp).rolling(window=window_size, min_periods=1).mean().to_numpy()
     moving_var = pd.Series(temp).rolling(window=window_size, min_periods=1).var().to_numpy()
 
     # Define a threshold for detecting similar values, using a small variance threshold
-    var_threshold = np.nanmean(moving_var) * 0.5
+    var_threshold = np.nanmean(moving_var) * 0.1
 
     # Identify periods with low variance
     similar_periods = moving_var < var_threshold
@@ -121,6 +123,8 @@ def datetime_to_decimal_year(date):
     date_position = (date - start_of_year).astype('timedelta64[D]').astype(int)
     decimal_year = date_position / year_duration * 12  # Scale to 0-12 where January=0 and December=11
     return decimal_year
+
+
 
 def get_data_from_temp_sensors(filepath, team_name='raw', lat= None, lon= None, ):
 
@@ -184,6 +188,7 @@ def plot_climatological_year(file_path):
 
     # Create a Date column
     df['Date'] = pd.to_datetime(df[['year', 'month', 'day']])
+    df['Date'] = df['Date'].astype('datetime64[ns]')
 
     # Group by month for climatological statistics
     grouped = df.groupby('month')['temperatura']
@@ -194,28 +199,23 @@ def plot_climatological_year(file_path):
     upper_whisker = q3 + 1.5 * iqr
     medians = grouped.median()
 
-    days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-# Function to calculate fractional week
-    def calculate_fractional_week(row):
-    # Sum up the days for all previous months
-      days_before = sum(days_in_months[:row['month'] - 1])
-    # Add the current day and convert to fractional week
-      return (days_before + row['day'] - 1) / 7
-
-# Apply the function to calculate fractional weeks
-    df['fractional_week'] = df.apply(calculate_fractional_week, axis=1)
+    # Apply the function to calculate fractional year
+    print(df['Date'])
+    df['fractional_time'] = [datetime_to_decimal_year(date) for date in df['Date'].values]
 
 
     # Weekly indices for interpolation
-    weekly_indices = np.linspace(1, 52, 52)
+    weekly_indices = np.linspace(0, 12, 84)
     weeks_per_month = [4.345] * 12
     cumulative_weeks = np.cumsum([0] + weeks_per_month)
 
     # Interpolate whiskers and medians to weekly scale
-    weekly_medians = np.interp(weekly_indices, cumulative_weeks[1:], medians)
-    weekly_lower = np.interp(weekly_indices, cumulative_weeks[1:], lower_whisker)
-    weekly_upper = np.interp(weekly_indices, cumulative_weeks[1:], upper_whisker)
+    print(len(df['fractional_time']))
+    print(len(medians))
+    weekly_medians = np.interp(weekly_indices, np.arange(0,12,1), medians)
+    weekly_lower = np.interp(weekly_indices, np.arange(0,12,1), lower_whisker)
+    weekly_upper = np.interp(weekly_indices, np.arange(0,12,1), upper_whisker)
 
     # Smooth whiskers and medians
     smoothed_medians = savgol_filter(weekly_medians, 7, 2)
@@ -231,7 +231,7 @@ def plot_climatological_year(file_path):
         color='lightblue',
         alpha=0.5,
         title='Climatological Year Temperature Range',
-        xlabel='Climatological Year',
+        xlabel='Month',
         ylabel='Temperature',
         width=800,
         height=400
@@ -248,17 +248,17 @@ def plot_climatological_year(file_path):
 
     month_boundaries = [
       0,    # January
-      4.345, # February
-      8.69,  # March
-      13.035, # April
-      17.38,  # May
-      21.725, # June
-      26.07,  # July
-      30.415, # August
-      34.76,  # September
-      39.105, # October
-      43.45,  # November
-      47.795  # December
+      1, # February
+      2,  # March
+      3, # April
+      4,  # May
+      5, # June
+      6,  # July
+      7, # August
+      8,  # September
+      9, # October
+      10,  # November
+      11  # December
     ]
 
     month_labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -276,18 +276,26 @@ def plot_climatological_year(file_path):
     return combined_plot
 
 def plot_obs(df):
+    hover = HoverTool(tooltips=[
+        ('Date', '@Date{%F}'),         # Show Date in YYYY-MM-DD format
+        ('Temperature', '@Temperature'),
+        ('Anomaly', '@Temperature_Anomaly')  # Renamed as "Anomaly"
+    ], formatters={'@Date': 'datetime'})
+    
     scatter_plot = hv.Scatter(
       df,
-      kdims=['fractional_week'],
-      vdims=['Temperature', 'Date', 'Team','Location']
+      kdims=['fractional_time'],
+      vdims=['Temperature', 'Temperature_Anomaly', 'Date']
     ).opts(
-      tools=['hover'],
+      tools=[hover, 'pan', 'wheel_zoom', 'box_zoom', 'reset'],
       width=800,
       height=400,
       title='Interactive Climatological Data',
-      color='red',
+      color='Temperature_Anomaly',      # Color based on Temperature_Anomaly
+      cmap='coolwarm',                  # Coolwarm color map
+      clim=(-3, 3),
       size=8,
-      xlabel='Climatological Year (Weeks)',
+      xlabel='Month',
       ylabel='Temperature',
       legend_position='top_left'
       )

@@ -27,7 +27,6 @@
         </nav>
     </header>
     
-    
     <div id="map"></div>
    
     <!-- Footer section -->
@@ -49,6 +48,8 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+        var allMarkers = [];
+
         // Function to add markers from CSV data
         function addMarkersFromCSV(csvData) {
             Papa.parse(csvData, {
@@ -58,26 +59,43 @@
                         var lat = parseFloat(row.Latitude);
                         var lon = parseFloat(row.Longitude);
                         var temp = row.Temperature;
+                        var temp_anom = row.Temperature_Anomaly;
                         var date = row.Date;
+                        var month = date.split('-')[1]; // Extract the month from the date
 
                         // Function to interpolate color between blue and red based on temperature
-                        function getColor(temp) {
-                            var minTemp = 12;
-                            var maxTemp = 25;
+                        function getColor(temp_anom) {
+                            var minTemp = -3;
+                            var maxTemp = 3;
+                            var middleTemp = (minTemp + maxTemp) / 2;
+                        
                             var blue = [0, 0, 255];
+                            var white = [255, 255, 255];
                             var red = [255, 0, 0];
+                        
+                            var ratio;
+                            var startColor, endColor;
+                        
+                            if (temp_anom < middleTemp) {
+                                ratio = (temp_anom - minTemp) / (middleTemp - minTemp);
+                                startColor = blue;
+                                endColor = white;
+                            } else {
+                                ratio = (temp_anom - middleTemp) / (maxTemp - middleTemp);
+                                startColor = white;
+                                endColor = red;
+                            }
 
-                            var ratio = (temp - minTemp) / (maxTemp - minTemp);
-                            ratio = Math.max(0, Math.min(1, ratio)); // Clamp between 0 and 1
+    ratio = Math.max(0, Math.min(1, ratio)); // Clamp between 0 and 1
 
-                            var r = Math.round(blue[0] + ratio * (red[0] - blue[0]));
-                            var g = Math.round(blue[1] + ratio * (red[1] - blue[1]));
-                            var b = Math.round(blue[2] + ratio * (red[2] - blue[2]));
+    var r = Math.round(startColor[0] + ratio * (endColor[0] - startColor[0]));
+    var g = Math.round(startColor[1] + ratio * (endColor[1] - startColor[1]));
+    var b = Math.round(startColor[2] + ratio * (endColor[2] - startColor[2]));
 
-                            return `rgb(${r},${g},${b})`;
-                        }
+    return `rgb(${r},${g},${b})`;
+}
 
-                var fillColor = getColor(temp);
+                var fillColor = getColor(temp_anom);
 
                         var popupContent = '<div style="width: 200px; font-family: Montserrat, sans-serif; margin-left: 20px;">' +
                                    '<strong>Sea Temperature:</strong> ' + temp + '°C<br>' +
@@ -90,14 +108,35 @@
                         };
 
 
-                        L.circleMarker([lat, lon], {
+                        var marker = L.circleMarker([lat, lon], {
                             radius: 6,           // Marker size
-                            color: 'none',        // Border color
+                            color: 'gray',     // Border color
+                            weight: 1,         // Border thickness
                             fillColor: fillColor,   // Fill color
                             fillOpacity: 0.5     // Fill opacity
                         }).addTo(map)
                           .bindPopup(popupContent, popupOptions);
+
+                        marker.month = month; // Attach month information to marker
+                        allMarkers.push(marker); // Store all markers
+                        marker.addTo(map); // Add marker to map initially
                     });
+                }
+            });
+        }
+        // Function to filter markers by month
+        function filterMarkersByMonth() {
+            var selectedMonth = document.getElementById('month-select').value;
+
+            // Remove all markers from the map
+            allMarkers.forEach(function(marker) {
+                map.removeLayer(marker);
+            });
+
+            // Add markers for the selected month
+            allMarkers.forEach(function(marker) {
+                if (selectedMonth === 'all' || marker.month === selectedMonth) {
+                    marker.addTo(map);
                 }
             });
         }
@@ -112,12 +151,39 @@
 
         colorBarControl.onAdd = function(map) {
             var div = L.DomUtil.create('div', 'color-bar-container');
-            div.innerHTML = '<div class="color-bar-title">Temperature Scale</div>' +
-                            '<div class="color-bar">12°C to 25°C</div>';
+            div.innerHTML = '<div class="color-bar-title">Temperature Anomaly (1970-1978)</div>' +
+                            '<div class="color-bar">-3°C to 3°C</div>';
             return div;
         };
 
         colorBarControl.addTo(map);
+        
+        // Create the dropdown menu control
+        var dropdownControl = L.control({position: 'bottomleft'});
+
+        dropdownControl.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'dropdown-container');
+            div.innerHTML = '<label for="month-select">Select Month: </label>' +
+                            '<select id="month-select" onchange="filterMarkersByMonth()">' +
+                            '<option value="all">All Months</option>' +
+                            '<option value="01">January</option>' +
+                            '<option value="02">February</option>' +
+                            '<option value="03">March</option>' +
+                            '<option value="04">April</option>' +
+                            '<option value="05">May</option>' +
+                            '<option value="06">June</option>' +
+                            '<option value="07">July</option>' +
+                            '<option value="08">August</option>' +
+                            '<option value="09">September</option>' +
+                            '<option value="10">October</option>' +
+                            '<option value="11">November</option>' +
+                            '<option value="12">December</option>' +
+                            '</select>';
+            return div;
+        };
+
+        dropdownControl.addTo(map);
+
 
         // Existing markers and popups
 
@@ -129,14 +195,14 @@
         });
         var lat_sardi    = 43.4756, lon_sardi    = -3.7847;
         var lat_magda    = 43.4704, lon_magda    = -3.7653;
-        var lat_IEO      = 43.46,   lon_IEO      = -3.78;
+        var lat_IEO      = 43.4634,   lon_IEO    = -3.7827;
         var lat_Miguel   = 43.4508, lon_Miguel   = -3.8215;
 
         // Create markers and popups with adjusted iframe dimensions
-        var popupContentSardi = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
+        var popupContentSardi = '<div style="width: 400px; height: 200px; overflow: hidden;">' +
                            '<iframe src="sardinero_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                            '</div>';
-        var popupContentMagda = '<div style="width: 400px; height: 250px; overflow: hidden;">' +
+        var popupContentMagda = '<div style="width: 400px; height: 200px; overflow: hidden;">' +
                             '<iframe src="magdalena_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
         var popupContentIEO = '<div style="width: 420px; height: 250px; overflow: hidden;">' +
