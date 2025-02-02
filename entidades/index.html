@@ -11,11 +11,17 @@
             text-align: center;
             list-style-type: none;
             padding: 0;
+            margin-bottom: 100px; /* Add space between the list and footer */
         }
         .institutions-list li {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.5em;
             margin: 10px 0;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -33,9 +39,8 @@
     </header>
     
     <!-- Main Content -->
-    <div>
+    <div class="main-content">
         <!-- List of Institutions -->
-        <h2>Participating Institutions</h2>
         <ul class="institutions-list">
             <li><a href="https://miguelbravo.es/" target="_blank">Colegio Miguel Bravo A.A. La Salle</a></li>
             <li><a href="https://www.escolapios-santander.org/" target="_blank">Colegio Calasanz</a></li>
