@@ -165,6 +165,19 @@ nav ul li a:hover {
     width: auto;
 }
 
+/* Flexbox for footer logos */
+footer .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#.logo {
+#    flex: 1 1 100px; /* Grow and shrink as needed */
+#    max-width: 180px; /* Maximum width of each logo */
+#}
+
 /* Add this to your style.css file */
 .info.legend {
     background: rgb(16 163 229 / 16%); /* Half-transparent white background */
@@ -228,6 +241,8 @@ nav ul li a:hover {
 
 
 /* Media query for screens smaller than 600px */
+
+/* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
     header img, footer img {
         max-height: 60px;
@@ -270,6 +285,51 @@ nav ul li a:hover {
     .leaflet-popup-content {
         width: auto !important;
         max-width: 100%;
+    }
+}
+
+
+/* Media query for tablets */
+@media (min-width: 600px) and (max-width: 900px) {
+    .header-text {
+        font-size: 25px;
+    }
+    .logos {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .logo {
+        max-height: 40px;
+    }
+    #map {
+        height: calc(100vh - 220px);
+    }
+    .info {
+        width: 50%;
+        padding: 10px;
+    }
+}
+
+/* Media query for laptops and desktops */
+@media (min-width: 900px) {
+    .header-text {
+        font-size: 35px;
+    }
+    .logos {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+    }
+    .logo {
+        max-height: 60px;
+    }
+    #map {
+        height: calc(100vh - 250px);
+    }
+    .info {
+        width: 30%;
+        padding: 10px;
     }
 }
 
