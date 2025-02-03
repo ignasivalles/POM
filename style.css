@@ -239,8 +239,20 @@ footer .logos {
     font-family: 'Montserrat', sans-serif;
 }
 
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* Maximum width for the largest display */
+    object-fit: cover;
+    object-position: top;
+}
 
-/* Media query for screens smaller than 600px */
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .responsive-image {
+        max-width: 320px; /* Adjust width for smaller screens */
+    }
+}
 
 /* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
