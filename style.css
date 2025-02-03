@@ -1,129 +1,162 @@
-/* General Styles */
-body, img {
-    max-width: 100%;
-    height: auto;
-}
-
-#map {
-    width: 100%;
-    height: calc(100vh - 250px);
-    margin-bottom: 10px;
-}
-
-.info {
-    width: 30%;
-    padding: 10px;
-}
-
-/* Header */
 header {
     width: 100%;
     margin-bottom: 5px;
     overflow: hidden;
     position: relative;
 }
-
 header img {
-    width: 100%;
-    max-height: 120px;
-    height: auto;
-    object-fit: cover;
+    width: 100%; /* Makes the image full width */
+    max-height: 120px; /* Limits the height to 100px */
+    height: auto; /* Keeps the aspect ratio */
+    object-fit: cover; 
     object-position: top;
 }
 
 .header-text {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 40px;
-    font-family: 'Montserrat', sans-serif;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Navigation */
-header .right-nav,
-header .left-nav {
-    position: absolute;
-    top: 70px;
-    transform: translate(0, -50%);
-    font-family: 'Montserrat', sans-serif;
-    z-index: 2;
-    text-align: center;
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0);
+    position: absolute; /* Absolutely position the text */
+    top: 70px; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    color: white; /* Text color */
+    font-size: 40px; /* Adjust font size as needed */
+    font-family: 'Montserrat', sans-serif; /* Change font type */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add a shadow for better visibility */
+    text-align: center; /* Center text */
+    text-transform: none; /* Make text appear in capital letters */
+    font-weight: bold; /* Make text bold */
 }
 
 header .right-nav {
-    right: 0;
+    position: absolute; /* Position the menu absolutely inside the header */
+    top: 70px; /* Adjust as needed */
+    right: 0px;
+    transform: translate(0, -50%);
+    font-family: 'Montserrat', sans-serif; /* Change font type */
+    z-index: 2; /* Makes sure the menu is above the image */
+    text-align: center; /* Centers the navigation menu */
+    padding: 10px 0; /* Adds padding around the menu */
+    background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
 }
 
 header .left-nav {
-    left: 0;
+    position: absolute; /* Position the menu absolutely inside the header */
+    top: 70px; /* Adjust as needed */
+    left: 0px; /* Position to the left */
+    transform: translate(0, -50%);
+    font-family: 'Montserrat', sans-serif; /* Change font type */
+    z-index: 2; /* Makes sure the menu is above the image */
+    text-align: center; /* Centers the navigation menu */
+    padding: 10px 0; /* Adds padding around the menu */
+    background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
 }
 
+.info img {
+    max-height: 40%; /* Subtract the height of header and other elements */
+    width: auto; /* Keep the width auto to maintain aspect ratio */
+    height: auto; /* Keep the height auto to maintain aspect ratio */
+}
+
+
+.leaflet-popup-content {
+    width: auto !important; /* Set your desired width */
+    height: auto !important;
+    max-width: 50%; /* Ensure it doesn't exceed the viewport */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0; 
+    margin: 0; 
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column; /* Stack h3 and info vertically */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Round the corners */
+    background-color: #fff; /* Optional: Background color */
+}
+
+
+.popup-image {
+    max-width: 420px; /* Set a max width for the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Optional: Add some margin to the h3 for spacing */
+.popup-content h3 {
+    margin-bottom: 5px; /* Space between title and info */
+}
+
+
+#map {
+    width: 100%;
+    height: calc(100vh - 250px);
+    margin-bottom: 10px;
+}
+.info {
+    width: 30%;
+    padding: 10px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5px; /* Add space above footer */
+}
+
+footer img {
+    width: 100%; /* Makes the image full width */
+    max-height: 80px; /* Limits the height */
+    height: auto; /* Keeps the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    object-position: bottom;
+}
+footer nav {
+    position: absolute; /* Position the menu absolutely inside the footer */
+    bottom: 22px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Makes sure the menu is above the image */
+    text-align: center; /* Centers the navigation menu */
+    padding: 10px 0; /* Adds padding around the menu */
+    background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
+}
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 10px 0 0;
+    margin: 10px 0 0; /* Adds margin on top */
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 15px; /* Spacing between the menu items */
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+    color: white; /* Menu text color */
+    text-decoration: none; /* Removes underline */
     font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Change font type */
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Adds underline on hover */
 }
 
-/* Footer */
-footer {
-    width: 100%;
-    overflow: hidden;
-    margin-top: 5px;
-}
-
-footer img {
-    width: 100%;
-    max-height: 80px;
-    height: auto;
-    object-fit: cover;
-    object-position: bottom;
-}
-
-footer nav {
-    position: absolute;
-    bottom: 22px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    text-align: center;
-    padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.footer .logos {
+.logos {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 50px;
     padding: 10px 0;
     position: absolute;
-    bottom: 23px;
-    right: 30px;
-    z-index: 2;
+    bottom: 23px; /* Position logos at the bottom of the footer */
+    right: 30px; 
+    z-index: 2; /* Ensure logos appear on top of the background image */
 }
 
 .logo {
@@ -132,39 +165,45 @@ footer nav {
     width: auto;
 }
 
-/* Popup */
-.leaflet-popup-content {
-    width: auto !important;
-    height: auto !important;
-    max-width: 50%;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-.popup-content {
+/* Flexbox for footer logos */
+footer .logos {
     display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.popup-image {
-    max-width: 420px;
-    height: auto;
+#.logo {
+#    flex: 1 1 100px; /* Grow and shrink as needed */
+#    max-width: 180px; /* Maximum width of each logo */
+#}
+
+/* Add this to your style.css file */
+.info.legend {
+    background: rgb(16 163 229 / 16%); /* Half-transparent white background */
+    padding: 5px 15px;
+    font: 12px/12px 'Montserrat', sans-serif; /* Use the same font as the title */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    #position: absolute;
+    top: 5000%; /* Center vertically */
+    right: 265%; /* Align to the left with some margin */
+    transform: translateY(150%); /* Adjust position to center vertically */
+}
+.info.legend img {
+   # vertical-align: middle;
+}
+.info.legend i {
+    display: inline-block;
+    width: 200px;
+    height: 10px;
+    margin-right: 200px;
 }
 
-.popup-content h3 {
-    margin-bottom: 5px;
-}
-
-/* Color Bar */
 .color-bar {
     position: relative;
-    bottom: 505px;
-    left: 1200px;
+    bottom: 1070%;
+    left: 790%;
     width: 200px;
     height: 20px;
     background: linear-gradient(to right, rgba(0, 0, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 0, 0, 0.5));
@@ -182,8 +221,8 @@ footer nav {
 
 .color-bar-title {
     position: relative;
-    bottom: 520px;
-    left: 1200px;
+    bottom: 1100%;
+    left: 790%;
     width: 200px;
     height: 20px;
     margin-bottom: 5px;
@@ -192,15 +231,30 @@ footer nav {
 
 .dropdown-container {
     position: absolute;
-    bottom: 440px;
-    left: 1250px;
-    background: rgba(255, 255, 255, 0.8);
+    bottom: 750%; /* Adjust the bottom position */
+    left: 775%; /* Adjust the left position */
+    background: rgba(255, 255, 255, 0.8); /* Optional: Add a background color */
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 5px; /* Optional: Add rounded corners */
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Media Queries */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* Maximum width for the largest display */
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .responsive-image {
+        max-width: 320px; /* Adjust width for smaller screens */
+    }
+}
+
+/* Media query for screens smaller than 600px */
 @media (max-width: 600px) {
     header img, footer img {
         max-height: 60px;
@@ -246,52 +300,48 @@ footer nav {
     }
 }
 
+
+/* Media query for tablets */
 @media (min-width: 600px) and (max-width: 900px) {
     .header-text {
         font-size: 25px;
     }
-
     .logos {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
-
     .logo {
         max-height: 40px;
     }
-
     #map {
         height: calc(100vh - 220px);
     }
-
     .info {
         width: 50%;
         padding: 10px;
     }
 }
 
+/* Media query for laptops and desktops */
 @media (min-width: 900px) {
     .header-text {
         font-size: 35px;
     }
-
     .logos {
         flex-direction: row;
         align-items: center;
         gap: 50px;
     }
-
     .logo {
         max-height: 60px;
     }
-
     #map {
         height: calc(100vh - 250px);
     }
-
     .info {
         width: 30%;
         padding: 10px;
     }
 }
+
