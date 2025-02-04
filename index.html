@@ -13,11 +13,10 @@
 <body>
     <header>
         <div class="header-text">Poniendo Ojos al Mar</div>
-        <div class="menu-toggle">Menu</div>
-        <nav class="nav-menu">
+        <div class="menu-toggle"></div>
+         <nav class="left-nav">
             <ul>
                 <li><a href="climatological-year/">Perspectiva climatológica</a></li>
-                <li><a href="entidades/">Entidades participantes</a></li>
                 <!-- Add more links here if needed -->
             </ul>
         </nav>
@@ -32,6 +31,12 @@
             <img src="assets/logoNexGen.png" alt="Logo NextGen" class="logo">
             <img src="assets/logoIEO-CSIC.png" alt="Logo IEO-CSIC" class="logo">
         </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="entidades/">Entidades participantes</a></li>
+                <!-- Add more links here if needed -->
+            </ul>
+        </nav>
     </footer>
     
     <script>
@@ -166,7 +171,7 @@
 
         dropdownControl.onAdd = function(map) {
             var div = L.DomUtil.create('div', 'dropdown-container');
-            div.innerHTML = '<label for="month-select">Select Month: </label>' +
+            div.innerHTML = '<label for="month-select"></label>' +
                             '<select id="month-select" onchange="filterMarkersByMonth()">' +
                             '<option value="all">All Months</option>' +
                             '<option value="01">January</option>' +

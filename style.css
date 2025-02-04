@@ -9,6 +9,33 @@ header {
     overflow: hidden;
     position: relative;
 }
+
+header .right-nav {
+        position: fixed; /* Position the menu absolutely inside the header */
+        top: 120px; /* Adjust as needed */
+        right: 620px;
+        transform: translate(0, -50%);
+        font-family: 'Montserrat', sans-serif; /* Change font type */
+        z-index: 2; /* Makes sure the menu is above the image */
+        text-align: center; /* Centers the navigation menu */
+        padding: 10px 0; /* Adds padding around the menu */
+        background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
+}
+
+header .left-nav {
+        position: absolute; /* Position the menu absolutely inside the header */
+        top: 120px; /* Adjust as needed */
+        left: 10px; /* Position to the left */
+        transform: translate(0, -50%);
+        font-family: 'Montserrat', sans-serif; /* Change font type */
+        z-index: 2; /* Makes sure the menu is above the image */
+        text-align: center; /* Centers the navigation menu */
+        padding: 10px 0; /* Adds padding around the menu */
+        background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
+        font-size: 12px;
+}
+
+
 header img {
     width: 100%; /* Makes the image full width */
     max-height: 120px; /* Limits the height to 100px */
@@ -19,7 +46,7 @@ header img {
 
 .header-text {
     position: absolute; /* Absolutely position the text */
-    top: 70px; /* Center vertically */
+    top: 60px; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust position to truly center */
     color: white; /* Text color */
@@ -106,8 +133,8 @@ footer img {
 }
 footer nav {
     position: absolute; /* Position the menu absolutely inside the footer */
-    bottom: 22px;
-    left: 50%;
+    bottom: 10px;
+    left: 12%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Makes sure the menu is above the image */
     text-align: center; /* Centers the navigation menu */
@@ -163,10 +190,6 @@ footer .logos {
     gap: 20px;
 }
 
-#.logo {
-#    flex: 1 1 100px; /* Grow and shrink as needed */
-#    max-width: 180px; /* Maximum width of each logo */
-#}
 
 /* Add this to your style.css file */
 .info.legend {
@@ -224,14 +247,18 @@ footer .logos {
 
 .dropdown-container {
     position: fixed;
-    top: 250px;
-    right: 35px;
-    background: rgba(255, 255, 255, 0.9);
+    top: 240px;
+    right: 85px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: rgba(255, 255, 255, 0);
     padding: 5px;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    width: 200px
+    text-align:;
+    width: 100px
 }
 
 .responsive-image {
@@ -242,51 +269,6 @@ footer .logos {
     object-position: top;
 }
 
-.menu-toggle {
-    display: block; /* Hidden on large screens */
-    background-color:;
-    color: white;
-    padding: 20px;
-    cursor: pointer;
-    top: 20px;
-    right: 600px;
-    z-index: 1000;
-    position: fixed;
-}
-
-.nav-menu {
-    display: none; /* Hidden by default */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    top: 50px;
-    right: 10px;
-    #background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.nav-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-menu li {
-    margin: 10px 0;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
-
-.nav-menu.show {
-    display: block; /* Show the menu when the 'show' class is toggled */
-}
 
 /* Hide the menu by default on small screens */
 @media (max-width: 768px) {
@@ -315,7 +297,7 @@ footer .logos {
 }
     
     .dropdown-container {
-    top: 220px;
+    top: 210px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     text-align: center;
@@ -420,23 +402,18 @@ footer .logos {
     margin-bottom: 10px;
 }
 
-    
+    footer nav {
+        position: fixed; /* Position the menu absolutely inside the footer */
+        bottom: -20px;
+        left: 11%;
+        transform: translate(-50%, -50%);
+        z-index: 2; /* Makes sure the menu is above the image */
+        text-align: center; /* Centers the navigation menu */
+        padding: 10px 0; /* Adds padding around the menu */
+        background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
+}   
 }
 
 /* Keep the menu always visible on larger screens */
+
 @media (min-width: 769px) {
-    .menu-toggle {
-        display: none; /* Hide the hamburger button on large screens */
-    }
-
-    .nav-menu {
-        display: flex; /* Show the menu by default on large screens */
-        flex-direction: row;
-        position: static;
-        box-shadow: none;
-    }
-
-    .nav-menu li {
-        margin: 0 15px;
-    }
-}
