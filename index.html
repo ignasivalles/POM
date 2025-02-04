@@ -12,16 +12,15 @@
 </head>
 <body>
     <header>
-        <img src="lider-fartos.jpg" alt="Header Image">
         <div class="header-text">Poniendo Ojos al Mar</div>
         <nav class="right-nav">
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="climatological-year/">Perspectiva climatológica</a></li>
                 <!-- Add more links here if needed -->
             </ul>
         </nav>
         <nav class="left-nav">
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="entidades/">Entidades participantes</a></li>
             </ul>
         </nav>
@@ -31,9 +30,7 @@
    
     <!-- Footer section -->
     <footer>
-        <div>
-            <img src="lider-fartos.jpg" alt="Footer Image" />
-        </div>
+
         <div class="logos">
             <img src="assets/logoNexGen.png" alt="Logo NextGen" class="logo">
             <img src="assets/logoIEO-CSIC.png" alt="Logo IEO-CSIC" class="logo">
@@ -41,8 +38,17 @@
     </footer>
 
     <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelectorAll('.nav-menu').forEach(menu => menu.classList.toggle('show'));
+        });
+    </script>
+    <script>
         // Initialize the map
-        var map = L.map('map').setView([43.44, -3.74], 11); // Center map on a specific location        
+        var map = L.map('map').setView([43.44, -3.9], 11); // Center map on a specific location 
+
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            map.setView([43.5, -3.78], 9.5);  // Zoomed out view for smaller screens
+        }
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
