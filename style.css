@@ -31,29 +31,6 @@ header img {
     font-weight: bold; /* Make text bold */
 }
 
-header .right-nav {
-    position: absolute; /* Position the menu absolutely inside the header */
-    top: 70px; /* Adjust as needed */
-    right: 0px;
-    transform: translate(0, -50%);
-    font-family: 'Montserrat', sans-serif; /* Change font type */
-    z-index: 2; /* Makes sure the menu is above the image */
-    text-align: center; /* Centers the navigation menu */
-    padding: 10px 0; /* Adds padding around the menu */
-    background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
-}
-
-header .left-nav {
-    position: absolute; /* Position the menu absolutely inside the header */
-    top: 70px; /* Adjust as needed */
-    left: 0px; /* Position to the left */
-    transform: translate(0, -50%);
-    font-family: 'Montserrat', sans-serif; /* Change font type */
-    z-index: 2; /* Makes sure the menu is above the image */
-    text-align: center; /* Centers the navigation menu */
-    padding: 10px 0; /* Adds padding around the menu */
-    background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
-}
 
 .info img {
     max-height: 40%; /* Subtract the height of header and other elements */
@@ -266,26 +243,54 @@ footer .logos {
 }
 
 .menu-toggle {
-    display: none; /* Hidden on large screens */
-    background-color: #333;
+    display: block; /* Hidden on large screens */
+    background-color:;
     color: white;
-    padding: 10px;
+    padding: 20px;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 600px;
     z-index: 1000;
+    position: fixed;
 }
 
 .nav-menu {
-    display: flex; /* Visible on large screens */
+    display: none; /* Hidden by default */
     list-style: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    #background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu ul {
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
+.nav-menu li {
+    margin: 10px 0;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.nav-menu.show {
+    display: block; /* Show the menu when the 'show' class is toggled */
+}
+
 /* Hide the menu by default on small screens */
 @media (max-width: 768px) {
+    
     .color-bar-container {
     top: 130px;
     padding: 10px;
@@ -425,14 +430,13 @@ footer .logos {
     }
 
     .nav-menu {
-        display: flex;
+        display: flex; /* Show the menu by default on large screens */
         flex-direction: row;
-        justify-content: center;
-        background: none;
         position: static;
+        box-shadow: none;
     }
 
-    nav ul li {
+    .nav-menu li {
         margin: 0 15px;
     }
 }

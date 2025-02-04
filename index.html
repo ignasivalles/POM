@@ -13,15 +13,12 @@
 <body>
     <header>
         <div class="header-text">Poniendo Ojos al Mar</div>
-        <nav class="right-nav">
-            <ul class="nav-menu">
+        <div class="menu-toggle">Menu</div>
+        <nav class="nav-menu">
+            <ul>
                 <li><a href="climatological-year/">Perspectiva climatológica</a></li>
-                <!-- Add more links here if needed -->
-            </ul>
-        </nav>
-        <nav class="left-nav">
-            <ul class="nav-menu">
                 <li><a href="entidades/">Entidades participantes</a></li>
+                <!-- Add more links here if needed -->
             </ul>
         </nav>
     </header>
@@ -36,7 +33,7 @@
             <img src="assets/logoIEO-CSIC.png" alt="Logo IEO-CSIC" class="logo">
         </div>
     </footer>
-
+    
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
         document.querySelectorAll('.nav-menu').forEach(menu => menu.classList.toggle('show'));
