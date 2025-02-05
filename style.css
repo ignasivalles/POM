@@ -58,6 +58,15 @@ header img {
     font-weight: bold; /* Make text bold */
 }
 
+.subtitle a {
+    color: white; /* Match the text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.subtitle a:hover {
+    text-decoration: none; /* Add underline on hover */
+}
+
 .header-text {
     position: absolute; /* Absolutely position the text */
     top: 60px; /* Center vertically */
