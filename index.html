@@ -13,16 +13,17 @@
 <body>
     <header>
         <div class="header-text">Poniendo Ojos al Mar</div>
+        <div class="subtitle">Tomando el pulso del Océano</div> <!-- Added subtitle here -->
         <div class="menu-toggle"></div>
-         <nav class="left-nav">
-            <ul>
-                <li><a href="climatological-year/">Perspectiva climatológica</a></li>
-                <!-- Add more links here if needed -->
-            </ul>
-        </nav>
     </header>
     
     <div id="map"></div>
+
+    <nav class="map-menu">
+        <ul>
+            <li><a href="climatological-year/">Perspectiva climatológica</a></li>
+        </ul>
+    </nav>
    
     <!-- Footer section -->
     <footer>
@@ -200,6 +201,7 @@
         var lat_magda    = 43.4704, lon_magda    = -3.7653;
         var lat_IEO      = 43.4634,   lon_IEO    = -3.7827;
         var lat_Miguel   = 43.4508, lon_Miguel   = -3.8215;
+        var lat_Laredo   = 43.4142, lon_Laredo   = -3.4192;
 
         // Create markers and popups with adjusted iframe dimensions
         var popupContentSardi = '<div style="width: 400px; height: 200px; overflow: hidden;">' +
@@ -214,6 +216,10 @@
 
         var popupContentMiguel = '<div style="width: 420px; height: 250px; overflow: hidden;">' +
                             '<iframe src="Miguel_Bravo_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
+                            '</div>';
+
+        var popupContentLaredo = '<div style="width: 420px; height: 250px; overflow: hidden;">' +
+                            '<iframe src="Laredo_plot.html" style="border:none; width: 100%; height: 100%;"></iframe>' +
                             '</div>';
     
         L.marker([lat_sardi, lon_sardi], {icon: watericonblue})
@@ -230,7 +236,11 @@
         
         L.marker([lat_IEO, lon_IEO], {icon: watericonblue})
             .addTo(map)
-            .bindPopup(popupContentIEO); // Attach the popup
+            .bindPopup(popupContentIEO);
+        
+        L.marker([lat_Laredo, lon_Laredo], {icon: watericonblue})
+            .addTo(map)
+            .bindPopup(popupContentLaredo);// Attach the popup
     </script>
 </body>
 </html>

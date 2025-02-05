@@ -44,6 +44,20 @@ header img {
     object-position: top;
 }
 
+.subtitle {
+    position: absolute; /* Absolutely position the text */
+    top: 115px; /* Adjust to be below the title */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    color: white; /* Text color */
+    font-size: 18px; /* Match font size as needed */
+    font-family: 'Montserrat', sans-serif; /* Change font type */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add a shadow for better visibility */
+    text-align: center; /* Center text */
+    text-transform: none; /* Make text appear in capital letters */
+    font-weight: bold; /* Make text bold */
+}
+
 .header-text {
     position: absolute; /* Absolutely position the text */
     top: 60px; /* Center vertically */
@@ -73,6 +87,7 @@ header img {
     box-sizing: border-box; /* Include padding in width calculation */
     padding: 0; 
     margin: 0; 
+    z-index: 1000;
 }
 
 .popup-content {
@@ -82,6 +97,7 @@ header img {
     border: 1px solid #ccc; /* Optional: Add a border */
     border-radius: 5px; /* Optional: Round the corners */
     background-color: #fff; /* Optional: Background color */
+    z-index: 1000;
 }
 
 
@@ -102,6 +118,40 @@ header img {
     overflow: hidden;
     position: relative;
 }
+
+.map-menu {
+    position: absolute;
+    top: 185px;
+    left: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 1000;
+}
+
+
+.map-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.map-menu ul li {
+    margin: 0px 0;
+}
+
+.map-menu ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.map-menu ul li a:hover {
+    text-decoration: underline;
+}
+
 .info {
     width: 30%;
     padding: 10px;
@@ -398,20 +448,30 @@ footer .logos {
     
     #map {
     width: 100%;
-    height: calc(110vh - 250px);
+    height: calc(105vh - 250px);
     margin-bottom: 10px;
 }
 
     footer nav {
         position: fixed; /* Position the menu absolutely inside the footer */
-        bottom: -20px;
-        left: 11%;
+        bottom: -10px;
+        left: 15%;
         transform: translate(-50%, -50%);
         z-index: 2; /* Makes sure the menu is above the image */
         text-align: center; /* Centers the navigation menu */
         padding: 10px 0; /* Adds padding around the menu */
         background-color: rgba(0, 0, 0, 0); /* Optional: Add a semi-transparent background */
-}   
+}
+    .map-menu {
+    position: absolute;
+    top: 135px;
+    left: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 1000;
+}
 }
 
 /* Keep the menu always visible on larger screens */
